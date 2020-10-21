@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+</head>
+ <body>
+	 <header>
+	 	<div class="logo">
+	 		<img src="{% static 'Logo.jpg' %}">
+	 	</div>
+	 </header>
+	<div class = "regform"><h1>SIGN IN PAGE</h1>
+
+	<div class="formBx">
+		<form id="myform" class="form" action="login" method="post">
+
+		{% csrf_token %}
+
+			<input id="uname" class="username" type="text" name="UserName" placeholder="Enter your username"><br><br>
+			<input id="pass" class="password" type="password" name="Password" placeholder="Password"><br><br>
+			<p>Don't have an account:</p>
+			<a href="register" class="white">Click Here</a>
+			<div class="button">
+				<input type="submit" value="Login" class="btn black">
+			</div>
+
+
+		</form>
+	 </div>
+	 </div>
+		</body>
+</html>
+		
+  	

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+	<script type="text/javascript" src="{% static 'Script1.js' %}"></script>
+
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="{% static 'Logo.jpg' %}">
+		</div>
+	</header>
+
+
+	<div class="regform">
+		<h1>Create Your Own Account</h1>
+
+		<div class="formBx">
+			<form id="myform" class="form" action="register" method="post">
+			{% csrf_token %}
+
+				<input id="name" class="name" type="text" name="Name" placeholder="Enter your full Name"><br><br>
+
+				<input id="uname" class="username" type="text" name="UserName" placeholder="Enter your username"><br><br>
+
+				<input id="em" class="email" type="email" name="Email" placeholder="Email Address"><br><br>
+				<input id="pass" class="password" type="password" name="Password1" placeholder="Password"><br><br>
+				<input id="pass1" class="password1" type="password" name="Password2" placeholder=" Confirm Password"><br><br>
+				<input type="submit" value="Register" />
+				<div class="button">
+					<!-- <a href="#" class="btn" onclick="validate()">Submit</a> -->
+					<a href="#" class="btn" onclick="fun()">Clear Form</a>
+				</div>
+
+
+			</form>
+		</div>
+		<div>
+			{% for message in messages %}
+			<h3> {{message}}</h3>
+			{% endfor %}
+			<a href="login" class="white">Click Here to Login</a>
+		</div>
+
+	</div>
+</body>
+</html>
+		
